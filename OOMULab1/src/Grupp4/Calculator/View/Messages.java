@@ -18,4 +18,8 @@ public class Messages {
     public void EndMessage(){
         System.out.println("Användaren avslutade applikationen\n");
     }
+    
+    public void WrongSynatx(){
+        System.out.println("”Syntax: java Calculator [källfil destinationsfil]”");
+    }
 }
