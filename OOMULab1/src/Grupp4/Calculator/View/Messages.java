@@ -18,4 +18,8 @@ public class Messages {
     public void EndMessage(){
         System.out.println("Användaren avslutade applikationen\n");
     }
+    
+    public void InputMessage(){
+        System.out.print("Ange RPN uttryck <retur> (tom sträng = avsluta):");
+    }
 }

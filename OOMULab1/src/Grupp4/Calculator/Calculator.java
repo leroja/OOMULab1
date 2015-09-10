@@ -23,7 +23,7 @@ public class Calculator {
             controll.run(args[0], args[1]);
             
         }else{
-            
+            System.out.println("Invalid number of arguments");
         }
         
 
