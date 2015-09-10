@@ -14,24 +14,34 @@ import Grupp4.Calculator.Model.*;
  */
 public class Controller {
     public void run(String input, String Dest){
-//        try {
+        try {
 //            File file = new File("test.txt");
 //            FileReader fileReader = new FileReader(file);
 //            BufferedReader bufferedReader = new BufferedReader(fileReader);
-//            StringBuffer stringBuffer = new StringBuffer();
-//            String line;
-//            while ((line = bufferedReader.readLine()) != null) {
-//                stringBuffer.append(line);
-//                stringBuffer.append("\n");
-//            }
-//            fileReader.close();
-//            System.out.println("Contents of file:");
-//            System.out.println(stringBuffer.toString());
-//        } catch (IOException e) {
+            
+           // File file = new File(Dest);
+            
+            BufferedReader fil= new BufferedReader(new FileReader(input));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Dest));
+ //           FileWriter writer = new FileWriter(Dest);
+            
+            String line;
+            while((line = fil.readLine()) != null){
+//                StringTokenizer st = new StringTokenizer(line);
+//                while (st.hasMoreTokens()) {
+//                    // add tokens to stack
+//                }
+             // calculate RPN
+            
+            // write result to file
+            writer.write("");
+            writer.newLine();
+            }
+            writer.close();
+        } catch (IOException e) {
 //            e.printStackTrace();
-//	}
-        System.out.print(input);
-        System.out.print(Dest);
+            
+	}
     }
     
     public void run(){
