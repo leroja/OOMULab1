@@ -8,6 +8,7 @@ package Grupp4.Calculator.Controller;
 import java.util.*;
 import java.io.*;
 import Grupp4.Calculator.Model.*;
+import Grupp4.Calculator.View.*;
 /**
  *
  * @author Lennart
@@ -45,23 +46,20 @@ public class Controller {
     }
     
     public void run(){
-        
-        
+        Messages text = new Messages();
         while(true){
-            
-            break;
-        }
-       
-        
-        Scanner scan = new Scanner(System.in);
-        
-        while(scan.hasNext()){
-            String str = scan.next();
-        
-            System.out.println(str);
-        }
+        text.InputMessage();
+        Scanner scan = new Scanner(System.in); 
+        String str =scan.nextLine();
+        if (str.isEmpty() == true){
+        text.EndMessage();
         System.exit(0);
+        }
+        else{
+            System.out.println(str);
+        }   
+        }
     }
 }
-
+     
 

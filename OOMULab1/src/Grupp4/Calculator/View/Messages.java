@@ -19,6 +19,8 @@ public class Messages {
         System.out.println("Användaren avslutade applikationen\n");
     }
     
+    public void InputMessage(){
+        System.out.print("Ange RPN uttryck <retur> (tom sträng = avsluta):");
     public void WrongSynatx(){
         System.out.println("”Syntax: java Calculator [källfil destinationsfil]”");
     }
