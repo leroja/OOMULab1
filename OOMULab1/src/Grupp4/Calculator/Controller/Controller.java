@@ -30,7 +30,8 @@ public class Controller {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //	}
-        
+        System.out.print(input);
+        System.out.print(Dest);
     }
     
     public void run(){

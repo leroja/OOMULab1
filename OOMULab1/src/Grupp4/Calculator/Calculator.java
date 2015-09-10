@@ -14,8 +14,19 @@ import Grupp4.Calculator.Controller.Controller;
  */
 public class Calculator {
     public static void main(String[] args) {
-        Controller controll = new Controller();
-        controll.run();
+        
+        if(args.length == 0){
+            Controller controll = new Controller();
+            controll.run();
+        }else if(args.length == 2){
+            Controller controll = new Controller();
+            controll.run(args[0], args[1]);
+            
+        }else{
+            
+        }
+        
+
     }
     
     
