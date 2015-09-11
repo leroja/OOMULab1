@@ -15,30 +15,27 @@ import Grupp4.Calculator.View.*;
  */
 public class Controller {
     public void run(String input, String Dest){
+        Messages text = new Messages();
         try {
-//            File file = new File("test.txt");
-//            FileReader fileReader = new FileReader(file);
-//            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            
-           // File file = new File(Dest);
             
             BufferedReader fil= new BufferedReader(new FileReader(input));
             BufferedWriter writer = new BufferedWriter(new FileWriter(Dest));
- //           FileWriter writer = new FileWriter(Dest);
             
-            String line;
+            
+            String line, result;
+            text.FileMessage(input, Dest);
             while((line = fil.readLine()) != null){
-//                StringTokenizer st = new StringTokenizer(line);
-//                while (st.hasMoreTokens()) {
-//                    // add tokens to stack
-//                }
+
              // calculate RPN
+             // result = 
             
             // write result to file
+            // wirter.writer(result);    
             writer.write("");
             writer.newLine();
             }
             writer.close();
+            text.Klar();
         } catch (IOException e) {
 //            e.printStackTrace();
             

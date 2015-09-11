@@ -5,20 +5,10 @@
  */
 package Grupp4.Calculator.Model;
 
-import Grupp4.Calculator.Model.Tokens.Token;
-import java.util.StringTokenizer;
-
 /**
  *
  * @author Lennart
  */
-public class Stack {
-    
-    
-    // constructor
-    public Stack(){
-        
-        
-    }
+public class Calculate {
         
 }

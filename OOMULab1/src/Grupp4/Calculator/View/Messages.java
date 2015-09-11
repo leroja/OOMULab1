@@ -21,7 +21,15 @@ public class Messages {
     
     public void InputMessage(){
         System.out.print("Ange RPN uttryck <retur> (tom sträng = avsluta):");
+    }    
     public void WrongSynatx(){
         System.out.println("”Syntax: java Calculator [källfil destinationsfil]”");
+    }
+    
+    public void FileMessage(String Source, String Dest){
+        System.out.println("Beräknar RPN uttryck från " + Source);
+    }
+    public void Klar(){
+        System.out.println("Beräkningen är klar");
     }
 }
