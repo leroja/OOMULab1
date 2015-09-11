@@ -10,5 +10,11 @@ package Grupp4.Calculator.Model.Tokens;
  * @author Lennart
  */
 public class Operator extends Token{
+    private Operand left, right;
+    private char opeartor;
     
+    
+    public void SetOperator(char operator){
+        this.opeartor = operator;
+    }
 }
