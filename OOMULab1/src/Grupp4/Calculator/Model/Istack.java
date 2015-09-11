@@ -6,19 +6,15 @@
 package Grupp4.Calculator.Model;
 
 import Grupp4.Calculator.Model.Tokens.Token;
-import java.util.StringTokenizer;
 
 /**
  *
- * @author Lennart
+ * @author alexander
  */
-public class Stack {
-    
-    
-    // constructor
-    public Stack(){
-        
-        
-    }
-        
+public interface Istack {
+    public void push(Token token);
+    public Token pop();
+    public Token peek();
+    public Boolean isEmpty();
+    public int stackSize();
 }
