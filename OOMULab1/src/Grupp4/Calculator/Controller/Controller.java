@@ -8,6 +8,7 @@ package Grupp4.Calculator.Controller;
 import java.util.*;
 import java.io.*;
 import Grupp4.Calculator.Model.*;
+import Grupp4.Calculator.Model.Tokens.Token;
 import Grupp4.Calculator.View.*;
 /**
  *
@@ -44,6 +45,7 @@ public class Controller {
     
     public void run(){
         Messages text = new Messages();
+        
         while(true){
         text.InputMessage();
         Scanner scan = new Scanner(System.in); 
@@ -53,10 +55,24 @@ public class Controller {
         System.exit(0);
         }
         else{
-            System.out.println(str);
+            TestRun(str);
         }   
         }
     }
+
+
+static public void TestRun(String str){
+    Token test;
+    String test2;
+    StringTokenizer t2 = new StringTokenizer(str);
+    TestStack t1 = new TestStack();
+   if (t1.isEmpty()== true){
+   System.out.println("Stack is empty");
+   }
+ }
+    
+
 }
+
      
 

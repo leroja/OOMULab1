@@ -17,14 +17,14 @@ public class TestStack implements Istack {
     private int top;
 
     public void TestStack(){
-        top = -1;
         stack = (Token[]) new Object[1000];
+        top = -1;
 }
     
     @Override
-    public void push(Token token) {
-        stack[top]=token;
+    public void push(Token token){
         top++;
+        stack[top]=token;
     }
 
     @Override
@@ -44,7 +44,8 @@ public class TestStack implements Istack {
 
     @Override
     public Boolean isEmpty() {
-    if(top == 0){
+        System.out.println(top);
+    if(top == -1){
         return (true);
     }
     else {
