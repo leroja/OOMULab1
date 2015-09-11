@@ -27,7 +27,7 @@ public class Messages {
     }
     
     public void FileMessage(String Source, String Dest){
-        System.out.println("Beräknar RPN uttryck från " + Source);
+        System.out.println("Beräknar RPN uttryck från " + Source + "\nSkriver svaren till " + Dest);
     }
     public void Klar(){
         System.out.println("Beräkningen är klar");
