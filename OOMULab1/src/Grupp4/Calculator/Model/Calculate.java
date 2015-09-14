@@ -22,16 +22,18 @@ public class Calculate {
     }
     
     public String calc(String Exp){
-        TestStack st = new TestStack();
+        StackStack st = new StackStack();
         StringTokenizer StrTok = new StringTokenizer(Exp);
         String str;
-        Token token = new Token();
-        Operand Op = new Operand();
+//        Token token = new Token();
+//        Operand Op = new Operand();
         Operator Oper = new Operator();
         
         while(StrTok.hasMoreTokens()){
             str = (StrTok.nextToken());
             if (isNumeric(str)){
+                Token token = new Token();
+                Operand Op = new Operand();
                 Op.SetOperand(Integer.parseInt(str));
                 token.setToken(Op);
                 st.push(token);
@@ -44,7 +46,11 @@ public class Calculate {
         }
         
         while(!st.isEmpty()){
+            Token token = new Token();
+            Operand Op = new Operand();
             token = st.pop();
+            Op = (Operand)token;
+            System.out.println(Op.getOperand());
         }
         
         

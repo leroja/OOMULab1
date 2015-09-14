@@ -44,7 +44,6 @@ public class TestStack implements Istack {
 
     @Override
     public Boolean isEmpty() {
-        System.out.println(top);
     if(top == -1){
         return (true);
     }
