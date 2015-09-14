@@ -17,6 +17,10 @@ public class Operator extends Token{
 //    public void SetOperator(char operator){
 //        this.opeartor = operator;
 //    }
+    
+    public Double Calc(Operator Op){
+        return 0.0;
+    }
 }
 
 //public class SummaOperator extends Operator{

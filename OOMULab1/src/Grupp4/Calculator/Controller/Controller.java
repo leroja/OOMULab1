@@ -45,6 +45,7 @@ public class Controller {
     
     public void run(){
         Messages text = new Messages();
+        Calculate c = new Calculate();
         
         while(true){
         text.InputMessage();
@@ -55,7 +56,8 @@ public class Controller {
         System.exit(0);
         }
         else{
-            TestRun(str);
+            c.calc(str);
+            //TestRun(str);
         }   
         }
     }

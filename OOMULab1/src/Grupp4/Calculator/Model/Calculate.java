@@ -5,10 +5,57 @@
  */
 package Grupp4.Calculator.Model;
 
+//import Grupp4.Calculator.Model.*;
+import Grupp4.Calculator.Model.Tokens.Operand;
+import Grupp4.Calculator.Model.Tokens.Operator;
+import Grupp4.Calculator.Model.Tokens.Token;
+import java.util.*;
+
 /**
  *
  * @author Lennart
  */
 public class Calculate {
-       
+      
+    public Calculate(){
+        
+    }
+    
+    public String calc(String Exp){
+        TestStack st = new TestStack();
+        StringTokenizer StrTok = new StringTokenizer(Exp);
+        String str;
+        Token token = new Token();
+        Operand Op = new Operand();
+        Operator Oper = new Operator();
+        
+        while(StrTok.hasMoreTokens()){
+            str = (StrTok.nextToken());
+            if (isNumeric(str)){
+                Op.SetOperand(Integer.parseInt(str));
+                token.setToken(Op);
+                st.push(token);
+            }
+            else if(IsOperator(str)){
+                
+            }
+            else System.out.println("Fel");
+            
+        }
+        
+        while(!st.isEmpty()){
+            token = st.pop();
+        }
+        
+        
+        return "";
+    }
+ 
+    
+    public boolean isNumeric(String s) {  
+        return s.matches("[-+]?\\d*\\.?\\d+");  
+    }
+    public boolean IsOperator(String s){
+        return s.matches("[+-/*%]");
+    }
 }
