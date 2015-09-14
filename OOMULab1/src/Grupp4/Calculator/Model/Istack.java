@@ -11,9 +11,7 @@ import Grupp4.Calculator.Model.Tokens.Token;
  *
  * @author alexander
  */
-public interface Istack {
-    
-    
+public interface Istack {  
     public void push(Token token);
     public Token pop();
     public Token peek();

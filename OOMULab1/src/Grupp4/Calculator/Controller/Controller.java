@@ -62,27 +62,22 @@ public class Controller {
 
 
 static public void TestRun(String str){
-    Token test;
     Operand t7;
-    Operand t6;
     t7 = new Operand();
-    t7.SetOperand(4);
+    t7.SetOperand(6);
+    Operand result;
+    int i;
     
-    String test2;
-    StringTokenizer t2 = new StringTokenizer(str);
-    TestStack t1 = new TestStack();
-    test2 = t2.nextToken();
-    t1.push(t7);
-   if (t1.isEmpty()== true){
-   System.out.println("Stack is empty");
-   }
-   // t6.SetOperand(t1.pop());
-   System.out.println("test;" + t7.getOperand());
-   
- }
-    
-
+    Token t1 = new Token();
+    Token test = new Token();
+    test.setToken(t7);
+    TestStack hey = new TestStack();
+    hey.push(test);
+    t1 = hey.pop();
+    result = (Operand) t1.getToken();
+    i = result.getOperand();
+    System.out.println(i);
 }
-
+}
      
 

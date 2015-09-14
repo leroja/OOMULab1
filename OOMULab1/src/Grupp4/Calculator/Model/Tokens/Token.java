@@ -8,13 +8,12 @@ package Grupp4.Calculator.Model.Tokens;
 /**
  *
  * @author Lennart
+ * @param <T>
  */
-public class Token {
-    Token token;
+public class Token<T> {
+    private T t;
     
-    public Token(){
-        
-    }
-    
-    
+   public void setToken (T t){this.t = t;}
+   
+    public T getToken(){return t;}
 }
