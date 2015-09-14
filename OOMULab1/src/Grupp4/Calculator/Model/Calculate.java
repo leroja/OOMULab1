@@ -6,9 +6,10 @@
 package Grupp4.Calculator.Model;
 
 //import Grupp4.Calculator.Model.*;
-import Grupp4.Calculator.Model.Tokens.Operand;
-import Grupp4.Calculator.Model.Tokens.Operator;
-import Grupp4.Calculator.Model.Tokens.Token;
+import Grupp4.Calculator.Model.Tokens.*;
+//import Grupp4.Calculator.Model.Tokens.Operand;
+//import Grupp4.Calculator.Model.Tokens.Operator;
+//import Grupp4.Calculator.Model.Tokens.Token;
 import java.util.*;
 
 /**
@@ -27,7 +28,7 @@ public class Calculate {
         String str;
 //        Token token = new Token();
 //        Operand Op = new Operand();
-        Operator Oper = new Operator();
+//        Operator Oper = new Operator();
         
         while(StrTok.hasMoreTokens()){
             str = (StrTok.nextToken());
@@ -39,7 +40,29 @@ public class Calculate {
                 st.push(token);
             }
             else if(IsOperator(str)){
-                
+                Operator Oper = new Operator();
+                switch(str){
+                    case "+":
+                        Oper = new SummaOperator();
+                        break;
+                    case "-":
+                        Oper = new DifferensOperator();
+                        break;
+                    case "*":
+                        Oper = new ProduktOperator();
+                        break;
+                    case "/":
+                        Oper = new KvotOperator();
+                        break;
+                    case "%":
+                        Oper = new ModulusOperator();
+                        break;
+                    default:
+                        System.exit(0);
+                }
+                Token token = new Token();
+                token.setToken(Oper);
+                st.push(token);
             }
             else System.out.println("Fel");
             
