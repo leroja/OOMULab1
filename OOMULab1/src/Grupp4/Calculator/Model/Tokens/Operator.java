@@ -23,6 +23,3 @@ public class Operator extends Token{
     }
 }
 
-//public class SummaOperator extends Operator{
-//    
-//}
