@@ -10,6 +10,7 @@ package Grupp4.Calculator.Model.Tokens;
  * @author Lennart
  */
 public class Token {
+    Token token;
     
     public Token(){
         

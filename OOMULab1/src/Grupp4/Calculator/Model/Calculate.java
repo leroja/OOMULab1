@@ -10,5 +10,5 @@ package Grupp4.Calculator.Model;
  * @author Lennart
  */
 public class Calculate {
-        
+       
 }

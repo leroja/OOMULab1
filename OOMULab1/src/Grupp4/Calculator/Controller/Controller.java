@@ -8,7 +8,7 @@ package Grupp4.Calculator.Controller;
 import java.util.*;
 import java.io.*;
 import Grupp4.Calculator.Model.*;
-import Grupp4.Calculator.Model.Tokens.Token;
+import Grupp4.Calculator.Model.Tokens.*;
 import Grupp4.Calculator.View.*;
 /**
  *
@@ -63,12 +63,22 @@ public class Controller {
 
 static public void TestRun(String str){
     Token test;
+    Operand t7;
+    Operand t6;
+    t7 = new Operand();
+    t7.SetOperand(4);
+    
     String test2;
     StringTokenizer t2 = new StringTokenizer(str);
     TestStack t1 = new TestStack();
+    test2 = t2.nextToken();
+    t1.push(t7);
    if (t1.isEmpty()== true){
    System.out.println("Stack is empty");
    }
+   // t6.SetOperand(t1.pop());
+   System.out.println("test;" + t7.getOperand());
+   
  }
     
 

@@ -11,10 +11,14 @@ package Grupp4.Calculator.Model.Tokens;
  */
 public class Operator extends Token{
     private Operand left, right;
-    private char opeartor;
+    //private char opeartor;
+    private Operator operator;
     
-    
-    public void SetOperator(char operator){
-        this.opeartor = operator;
-    }
+//    public void SetOperator(char operator){
+//        this.opeartor = operator;
+//    }
 }
+
+//public class SummaOperator extends Operator{
+//    
+//}

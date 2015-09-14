@@ -10,5 +10,12 @@ package Grupp4.Calculator.Model.Tokens;
  * @author Lennart
  */
 public class Operand extends Token{
+    int tal;
     
+    public void SetOperand(int tal){
+        this.tal = tal;
+    }
+    public int  getOperand(){
+    return (tal);
+    }
 }

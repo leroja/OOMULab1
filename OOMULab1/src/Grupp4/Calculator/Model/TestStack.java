@@ -16,8 +16,8 @@ public class TestStack implements Istack {
     private Token[] stack;
     private int top;
 
-    public void TestStack(){
-        stack = (Token[]) new Object[1000];
+    public TestStack(){
+        stack = new Token[1000];
         top = -1;
 }
     
