@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Grupp4.Calculator.Model.Tokens;
-
 /**
  *
  * @author Lennart
@@ -12,8 +11,17 @@ package Grupp4.Calculator.Model.Tokens;
  */
 public class Token<T> {
     private T t;
+    private String Type;
     
-   public void setToken (T t){this.t = t;}
+    public void SetType(String newType){
+        Type = newType;
+    }
+    
+    public String getType(){
+        return (Type);
+    }
+    
+   public void setToken (T newToken){t = newToken;}
    
     public T getToken(){return t;}
 }

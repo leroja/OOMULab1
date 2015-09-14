@@ -23,7 +23,8 @@ public class Calculate {
     }
     
     public String calc(String Exp){
-        StackStack st = new StackStack();
+        int test;
+        TestStack st = new TestStack();
         StringTokenizer StrTok = new StringTokenizer(Exp);
         String str;
 //        Token token = new Token();
@@ -44,6 +45,9 @@ public class Calculate {
                 switch(str){
                     case "+":
                         Oper = new SummaOperator();
+                        SummaOperator sum = new SummaOperator();
+                        test = sum.add(st);
+                        System.out.println(test);
                         break;
                     case "-":
                         Oper = new DifferensOperator();
@@ -68,13 +72,13 @@ public class Calculate {
             
         }
         
-        while(!st.isEmpty()){
-            Token token = new Token();
-            Operand Op = new Operand();
-            token = st.pop();
-            Op = (Operand)token;
-            System.out.println(Op.getOperand());
-        }
+//        while(!st.isEmpty()){
+//            Token token = new Token();
+//            Operand Op = new Operand();
+//            token = st.pop();
+//            Op =(Operand)token.getToken();
+//            System.out.println(Op.getOperand());
+//        }
         
         
         return "";
