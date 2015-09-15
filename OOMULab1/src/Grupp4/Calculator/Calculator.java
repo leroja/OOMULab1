@@ -7,26 +7,30 @@ package Grupp4.Calculator;
 
 
 import Grupp4.Calculator.Controller.Controller;
+import Grupp4.Calculator.Exeptions.*;
 
 /**
  *
  * @author Lennart
  */
 public class Calculator {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidTokenException {
         
-        if(args.length == 0){
-            Controller controll = new Controller();
-            controll.run();
-        }else if(args.length == 2){
-            Controller controll = new Controller();
-            controll.run(args[0], args[1]);
-            
-        }else{
-            System.out.println("Invalid number of arguments");
-        }
-        
+        try{
+            if(args.length == 0){
+                Controller controll = new Controller();
+                controll.run();
+            }else if(args.length == 2){
+                Controller controll = new Controller();
+                controll.run(args[0], args[1]);
 
+            }else{
+                throw new WrongSyntax();
+            }
+        
+        }catch(WrongSyntax w){
+            System.out.println(w.getMessage());
+        }
     }
     
     

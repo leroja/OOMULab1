@@ -5,6 +5,7 @@
  */
 package Grupp4.Calculator.Controller;
 
+import Grupp4.Calculator.Exeptions.*;
 import java.util.*;
 import java.io.*;
 import Grupp4.Calculator.Model.*;
@@ -15,20 +16,21 @@ import Grupp4.Calculator.View.*;
  * @author Lennart
  */
 public class Controller {
-    public void run(String input, String Dest){
+    
+    public void run(String input, String Dest) throws InvalidTokenException{
         Messages text = new Messages();
         try {
             
             BufferedReader fil= new BufferedReader(new FileReader(input));
             BufferedWriter writer = new BufferedWriter(new FileWriter(Dest));
-            
+            Calculate c = new Calculate();
             
             String line, result;
             text.FileMessage(input, Dest);
             while((line = fil.readLine()) != null){
 
              // calculate RPN
-             // result = 
+             // result = c.calc(line);
             
             // write result to file
             // wirter.writer(result);    
@@ -39,11 +41,11 @@ public class Controller {
             text.Klar();
         } catch (IOException e) {
 //            e.printStackTrace();
-            
+            System.out.println(e.getMessage());
 	}
     }
     
-    public void run(){
+    public void run() throws InvalidTokenException{
         Messages text = new Messages();
         Calculate c = new Calculate();
         
