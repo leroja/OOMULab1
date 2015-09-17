@@ -14,7 +14,7 @@ import Grupp4.Calculator.Exeptions.*;
  * @author Lennart
  */
 public class Calculator {
-    public static void main(String[] args) throws InvalidTokenException {
+    public static void main(String[] args) throws InvalidTokenException, DivideByZeroException {
         
         try{
             if(args.length == 0){

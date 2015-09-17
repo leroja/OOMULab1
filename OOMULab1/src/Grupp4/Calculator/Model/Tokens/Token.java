@@ -6,7 +6,6 @@
 package Grupp4.Calculator.Model.Tokens;
 
 import Grupp4.Calculator.Exeptions.DivideByZeroException;
-import Grupp4.Calculator.Model.TestStack;
 import Grupp4.Calculator.Model.Istack;
 
 /**

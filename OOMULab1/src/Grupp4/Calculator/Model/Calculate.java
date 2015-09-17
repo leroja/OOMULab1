@@ -95,22 +95,17 @@ public class Calculate {
         return Double.toString(res);
         
         } catch(InvalidTokenException ite){
-            System.out.println(ite.getMessage());
             return ite.getMessage();
-        }catch(ArithmeticException are){				
-            System.out.println(are.getMessage());
+        }catch(ArithmeticException are){
             return are.getMessage();
         }catch(InvalidOperationException ioe){
-            System.out.println(ioe.getMessage());
             return ioe.getMessage();
         }catch(NumberFormatException nfe){
             System.out.println(nfe.getMessage());
             return nfe.getMessage();
         }catch (MoreTokensExistException mtee){
-            System.out.println(mtee.getMessage());
             return mtee.getMessage();
         }catch (DivideByZeroException dbze){
-            System.out.println(dbze.getMessage());
             return dbze.getMessage();
         }
         
@@ -123,14 +118,14 @@ public class Calculate {
     public boolean IsOperator(String s){
         return s.matches("[+-/*%]");
     }
-    public boolean isAlpha(String name) {
-    char[] chars = name.toCharArray();
-
-    for (char c : chars) {
-        if(!Character.isLetter(c)) {
-            return false;
-        }
-    }
-    return true;
-}
+//    public boolean isAlpha(String name) {
+//    char[] chars = name.toCharArray();
+//
+//    for (char c : chars) {
+//        if(!Character.isLetter(c)) {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
 }

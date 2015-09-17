@@ -15,7 +15,6 @@ import Grupp4.Calculator.Model.Istack;
 public class SummaOperator extends Operator{
     
     public SummaOperator(){
-        operator = '+';
     }
     
      

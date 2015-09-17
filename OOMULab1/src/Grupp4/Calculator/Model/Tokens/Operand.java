@@ -6,8 +6,6 @@
 package Grupp4.Calculator.Model.Tokens;
 
 import Grupp4.Calculator.Model.Istack;
-import Grupp4.Calculator.Model.TestStack;
-
 /**
  *
  * @author Lennart

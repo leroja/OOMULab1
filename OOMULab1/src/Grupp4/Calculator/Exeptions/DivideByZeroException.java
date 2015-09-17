@@ -12,7 +12,7 @@ package Grupp4.Calculator.Exeptions;
 public class DivideByZeroException extends Exception{
     
     public DivideByZeroException(String token1, String Oper, String token2){
-        super("DivideByZeroException" + token1 + Oper + token2);
+        super("DivideByZeroException: " + token1 + Oper + token2);
     }
     
 }
