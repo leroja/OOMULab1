@@ -27,10 +27,9 @@ public class Controller {
             
             text.FileMessage(input, Dest);
             while((line = fil.readLine()) != null){
-             // calculate RPN
+             
             result = c.calc(line);
             
-            // write result to file
             writer.write(result);
             writer.newLine();
             }
@@ -62,23 +61,7 @@ public class Controller {
     }
 
 
-static public void TestRun(String str){
-    Operand t7;
-    t7 = new Operand();
-    t7.SetOperand(6);
-    Operand result;
-    double i;
-    
-    Token t1 = new Token();
-    Token test = new Token();
-    test.setToken(t7);
-    TestStack hey = new TestStack();
-    hey.push(test);
-    t1 = hey.pop();
-    result = (Operand) t1.getToken();
-    i = result.getOperand();
-    System.out.println(i);
-}
+
 }
      
 

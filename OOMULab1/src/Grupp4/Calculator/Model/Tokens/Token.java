@@ -25,9 +25,13 @@ public class Token<T>{
         return (Type);
     }
     
-   public void setToken (T newToken){t = newToken;}
+   public void setToken (T newToken){
+       t = newToken;
+   }
    
-    public T getToken(){return t;}
+    public T getToken(){
+        return t;
+    }
     
     public double Calc(Istack stack) throws DivideByZeroException{
         return 0;
