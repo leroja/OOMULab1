@@ -16,5 +16,4 @@ public interface Istack {
     public Token pop();
     public Token peek();
     public Boolean isEmpty();
-    public int stackSize();
 }

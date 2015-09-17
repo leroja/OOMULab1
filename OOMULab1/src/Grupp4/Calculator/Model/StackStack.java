@@ -39,9 +39,5 @@ public class StackStack implements Istack{
         return(st.isEmpty());
     }
 
-    @Override
-    public int stackSize(){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

@@ -28,8 +28,8 @@ public class Calculator {
                 throw new WrongSyntax();
             }
         
-        }catch(WrongSyntax w){
-            System.out.println(w.getMessage());
+        }catch(WrongSyntax ws){
+            System.out.println(ws.getMessage());
         }
     }
     

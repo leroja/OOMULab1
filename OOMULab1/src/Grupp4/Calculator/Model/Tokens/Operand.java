@@ -5,17 +5,27 @@
  */
 package Grupp4.Calculator.Model.Tokens;
 
+import Grupp4.Calculator.Model.Istack;
+import Grupp4.Calculator.Model.TestStack;
+
 /**
  *
  * @author Lennart
  */
 public class Operand extends Token{
-    int tal;
+    double tal;
     
-    public void SetOperand(int tal){
+    public void SetOperand(double tal){
         this.tal = tal;
     }
-    public int  getOperand(){
-    return (tal);
+    public double  getOperand(){
+        return (tal);
     }
+
+    @Override
+    public double Calc(Istack stack) {
+        return tal;
+    }
+    
+    
 }

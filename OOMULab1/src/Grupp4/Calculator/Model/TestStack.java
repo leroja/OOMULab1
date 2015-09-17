@@ -50,10 +50,5 @@ public class TestStack implements Istack {
         return (false);
     }
     }  
-  
-    @Override
-    public int stackSize() {
-        return(top +1);
-    }
-        
+          
 }

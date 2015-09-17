@@ -5,6 +5,10 @@
  */
 package Grupp4.Calculator.Model.Tokens;
 
+import Grupp4.Calculator.Exeptions.DivideByZeroException;
+import Grupp4.Calculator.Model.Istack;
+import Grupp4.Calculator.Model.TestStack;
+
 /**
  *
  * @author Lennart
@@ -13,7 +17,13 @@ public class Operator extends Token{
 //    private Operand left, right;
 //    //private char opeartor;
 //    private Operator operator;
-    private char operator;
+    protected char operator;
+    protected Operand left, right;
+    
+    public Operator(){
+        left = new Operand();
+        right = new Operand();
+    } 
     
 //    public void SetOperator(char operator){
 //        this.operator = operator;
@@ -27,6 +37,13 @@ public class Operator extends Token{
     public char getOperator(){
         return this.operator;
     }
+
+    @Override
+    public double Calc(Istack stack) throws DivideByZeroException{
+        return super.Calc(stack); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+   
     
 }
 

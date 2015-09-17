@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 package Grupp4.Calculator.Model.Tokens;
+
+import Grupp4.Calculator.Exeptions.DivideByZeroException;
+import Grupp4.Calculator.Model.TestStack;
+import Grupp4.Calculator.Model.Istack;
+
 /**
  *
  * @author Lennart
  * @param <T>
  */
-public class Token<T> {
+public class Token<T>{
     private T t;
     private String Type;
     
@@ -24,4 +29,9 @@ public class Token<T> {
    public void setToken (T newToken){t = newToken;}
    
     public T getToken(){return t;}
+    
+    public double Calc(Istack stack) throws DivideByZeroException{
+        return 0;
+
+    }
 }

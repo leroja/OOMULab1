@@ -5,7 +5,8 @@
  */
 package Grupp4.Calculator.Model.Tokens;
 
-import Grupp4.Calculator.Model.TestStack;
+import Grupp4.Calculator.Exeptions.DivideByZeroException;
+import Grupp4.Calculator.Model.Istack;
 
 /**
  *
@@ -13,43 +14,47 @@ import Grupp4.Calculator.Model.TestStack;
  */
 public class SummaOperator extends Operator{
     
- public int add(TestStack stack){
-    String tok;
-    Token token = new Token();
-    Token Operator = new Token();
-    int one;
-    int two;
-    Token t4 = new Token();
-    Token t5 = new Token();
-    Operand t1 = new Operand();
-    Operand t2 = new Operand();
+    public SummaOperator(){
+        operator = '+';
+    }
     
-    token = stack.peek();
-    tok = token.getType();
-    if (tok == "Char"){
-        Operator = stack.pop();
-    }
-    else if (tok == "int"){
-        // fel
-    }
-       
-    token = stack.peek();
-    tok = token.getType();
-    if (tok == "Char"){
-    // switch över olika räkne sätt 
-    }
-    else {
-    t4 = stack.pop();
-    t1 = (Operand)t4.getToken();
-    t5 = stack.pop();
-    t2 = (Operand) t5.getToken();
-           one = t1.getOperand();
-           two = t2.getOperand();
-           return (one + two);
+     
+
+    @Override
+    public double Calc(Istack stack) throws DivideByZeroException{
+        double r, Right, Left;
+        Token tok = new Token();
+        Operator Oper = new Operator();
+        Operand Op = new Operand();
+
+        
+        tok = stack.pop();
+        if("Char".equals(tok.getType())){
+            Oper = new Operator();
+            Oper = (Operator)tok.getToken();
+            this.right.SetOperand(Oper.Calc(stack));
+        }else{
+            Op = new Operand();
+            Op = (Operand)tok.getToken();
+            this.right.SetOperand(Op.Calc(stack));
+        }
+        tok = new Token();
+        tok = stack.pop();
+        if("Char".equals(tok.getType())){
+            Oper = new Operator();
+            Oper = (Operator)tok.getToken();
+            this.left.SetOperand(Oper.Calc(stack));
+        }else{
+            Op = new Operand();
+            Op = (Operand)tok.getToken();
+            this.left.SetOperand(Op.Calc(stack));
+        }
+        
+        
+        r = this.left.getOperand() + this.right.getOperand();
+        return r;
         
     }
-     return 0;
- }   
  }
 
 

@@ -17,49 +17,46 @@ import Grupp4.Calculator.View.*;
  */
 public class Controller {
     
-    public void run(String input, String Dest) throws InvalidTokenException{
+    public void run(String input, String Dest) throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         try {
-            
             BufferedReader fil= new BufferedReader(new FileReader(input));
             BufferedWriter writer = new BufferedWriter(new FileWriter(Dest));
             Calculate c = new Calculate();
-            
             String line, result;
+            
             text.FileMessage(input, Dest);
             while((line = fil.readLine()) != null){
-
              // calculate RPN
-             // result = c.calc(line);
+            result = c.calc(line);
             
             // write result to file
-            // wirter.writer(result);    
-            writer.write("");
+            writer.write(result);
             writer.newLine();
             }
             writer.close();
             text.Klar();
         } catch (IOException e) {
-//            e.printStackTrace();
             System.out.println(e.getMessage());
 	}
     }
     
-    public void run() throws InvalidTokenException{
+    public void run() throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         Calculate c = new Calculate();
+        String result;
         
         while(true){
         text.InputMessage();
         Scanner scan = new Scanner(System.in); 
         String str =scan.nextLine();
         if (str.isEmpty() == true){
-        text.EndMessage();
-        System.exit(0);
+            text.EndMessage();
+            System.exit(0);
         }
         else{
-            c.calc(str);
-            //TestRun(str);
+            result = c.calc(str);
+            System.out.println("Resultat: "+ result);
         }   
         }
     }
@@ -70,7 +67,7 @@ static public void TestRun(String str){
     t7 = new Operand();
     t7.SetOperand(6);
     Operand result;
-    int i;
+    double i;
     
     Token t1 = new Token();
     Token test = new Token();

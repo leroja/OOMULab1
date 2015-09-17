@@ -20,9 +20,9 @@ public class Calculate {
         
     }
     
-    public String calc(String Exp) throws InvalidTokenException{
-        int test;
-        TestStack st = new TestStack();
+    public String calc(String Exp) throws InvalidTokenException, DivideByZeroException{
+        double res =0;
+        Istack st = new StackStack();
         StringTokenizer StrTok = new StringTokenizer(Exp);
         String str;
         
@@ -34,7 +34,7 @@ public class Calculate {
                     if (isNumeric(str)){
                         Token token = new Token();
                         Operand Op = new Operand();
-                        Op.SetOperand(Integer.parseInt(str));
+                        Op.SetOperand(Double.parseDouble(str));
                         token.setToken(Op);
                         token.SetType("int");
                         st.push(token);
@@ -44,9 +44,6 @@ public class Calculate {
                         switch(str){
                             case "+":
                                 Oper = new SummaOperator();
-        //                        SummaOperator sum = new SummaOperator();
-        //                        test = sum.add(st);
-        //                        System.out.println(test);
                                 break;
                             case "-":
                                 Oper = new DifferensOperator();
@@ -77,31 +74,44 @@ public class Calculate {
 //                        //InvalidTokenException: w
                 }
         
-        while(!st.isEmpty()){
             Token token = new Token();
             Operand Op = new Operand();
             Operator Oper = new Operator();
             
             token = st.pop();
+            //token.Calc(st);
             if("int".equals(token.getType())){
-                Op = (Operand)token.getToken();
-                System.out.println(Op.getOperand());
+                throw new InvalidOperationException();
             }
             if("Char".equals(token.getType())){
                 Oper = (Operator)token.getToken();
-                System.out.println(Oper.getOperator());
+                res = Oper.Calc(st);
             }
 
-        }
-
+            if(!st.isEmpty()){
+                throw new MoreTokensExistException();
+            }
+               
+        return Double.toString(res);
         
-        return "";
         } catch(InvalidTokenException ite){
             System.out.println(ite.getMessage());
             return ite.getMessage();
         }catch(ArithmeticException are){				
             System.out.println(are.getMessage());
             return are.getMessage();
+        }catch(InvalidOperationException ioe){
+            System.out.println(ioe.getMessage());
+            return ioe.getMessage();
+        }catch(NumberFormatException nfe){
+            System.out.println(nfe.getMessage());
+            return nfe.getMessage();
+        }catch (MoreTokensExistException mtee){
+            System.out.println(mtee.getMessage());
+            return mtee.getMessage();
+        }catch (DivideByZeroException dbze){
+            System.out.println(dbze.getMessage());
+            return dbze.getMessage();
         }
         
     }
