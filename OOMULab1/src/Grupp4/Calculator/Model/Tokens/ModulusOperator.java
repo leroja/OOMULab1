@@ -16,6 +16,12 @@ public class ModulusOperator extends Operator{
 
     public ModulusOperator() {
     }
+    
+    @Override
+     public String toString(){
+        return ("%");
+    }
+    
 
     @Override
     public double Calc(Istack stack) throws DivideByZeroException{

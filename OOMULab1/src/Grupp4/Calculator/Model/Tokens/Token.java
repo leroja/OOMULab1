@@ -25,6 +25,11 @@ public class Token<T>{
         return (Type);
     }
     
+    @Override
+    public String toString(){
+        return( "Token consists of type" + Type + "whcih is"+ t);
+    }
+    
    public void setToken (T newToken){t = newToken;}
    
     public T getToken(){return t;}

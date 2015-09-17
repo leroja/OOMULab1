@@ -18,6 +18,11 @@ public class ProduktOperator extends Operator{
     }
 
     @Override
+     public String toString(){
+        return ("*");
+    }
+    
+    @Override
     public double Calc(Istack stack) throws DivideByZeroException{
         double r, Right, Left;
         Token tok = new Token();

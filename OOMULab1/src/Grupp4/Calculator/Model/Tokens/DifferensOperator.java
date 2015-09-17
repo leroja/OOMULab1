@@ -16,6 +16,12 @@ public class DifferensOperator extends Operator{
 
     public DifferensOperator() {
     }
+    
+    @Override
+     public String toString(){
+        return ("-");
+    }
+    
 
     @Override
     public double Calc(Istack stack) throws DivideByZeroException{

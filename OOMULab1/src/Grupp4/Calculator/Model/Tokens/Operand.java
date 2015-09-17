@@ -13,6 +13,11 @@ import Grupp4.Calculator.Model.Istack;
 public class Operand extends Token{
     double tal;
     
+    @Override
+    public String toString(){
+        return(Double.toString(tal));
+    }
+    
     public void SetOperand(double tal){
         this.tal = tal;
     }

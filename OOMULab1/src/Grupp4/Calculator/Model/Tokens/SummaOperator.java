@@ -17,6 +17,11 @@ public class SummaOperator extends Operator{
     public SummaOperator(){
     }
     
+    @Override
+    public String toString(){
+        return ("+");
+    }
+    
      
 
     @Override

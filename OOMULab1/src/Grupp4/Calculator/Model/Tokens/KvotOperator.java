@@ -16,6 +16,12 @@ public class KvotOperator extends Operator{
 
     public KvotOperator() {
     }
+    
+    @Override
+     public String toString(){
+        return ("/");
+    }
+    
 
     @Override
     public double Calc(Istack stack) throws DivideByZeroException{

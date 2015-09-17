@@ -16,7 +16,7 @@ import Grupp4.Calculator.View.*;
  * @author Lennart
  */
 public class Controller {
-    
+    /*Runs when program starts with 2 comandline arguments*/
     public void run(String input, String Dest) throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         try {
@@ -40,7 +40,7 @@ public class Controller {
             System.out.println(e.getMessage());
 	}
     }
-    
+    /*Runs when program starts with 0 comandline arguments*/
     public void run() throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         Calculate c = new Calculate();
@@ -60,25 +60,6 @@ public class Controller {
         }   
         }
     }
-
-
-static public void TestRun(String str){
-    Operand t7;
-    t7 = new Operand();
-    t7.SetOperand(6);
-    Operand result;
-    double i;
-    
-    Token t1 = new Token();
-    Token test = new Token();
-    test.setToken(t7);
-    TestStack hey = new TestStack();
-    hey.push(test);
-    t1 = hey.pop();
-    result = (Operand) t1.getToken();
-    i = result.getOperand();
-    System.out.println(i);
-}
 }
      
 
