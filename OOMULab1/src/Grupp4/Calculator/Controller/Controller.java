@@ -27,10 +27,9 @@ public class Controller {
             
             text.FileMessage(input, Dest);
             while((line = fil.readLine()) != null){
-             // calculate RPN
+             
             result = c.calc(line);
             
-            // write result to file
             writer.write(result);
             writer.newLine();
             }

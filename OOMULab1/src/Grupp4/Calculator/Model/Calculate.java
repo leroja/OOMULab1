@@ -28,7 +28,6 @@ public class Calculate {
         
         
         try{
-            
                while(StrTok.hasMoreTokens()){
                     str = (StrTok.nextToken());
                     if (isNumeric(str)){
@@ -58,7 +57,7 @@ public class Calculate {
                                 Oper = new ModulusOperator();
                                 break;
                             default:
-                                System.exit(0);
+                                throw new InvalidTokenException(str);
                         }
                         Token token = new Token();
                         token.setToken(Oper);
@@ -67,11 +66,6 @@ public class Calculate {
                     }else {
                         throw new InvalidTokenException(str);
                     }
-//                    else if (isAlpha(str)){
-//                      throw new InvalidTokenException(str);
-//                    }
-//                    else System.out.println("Fel");
-//                        //InvalidTokenException: w
                 }
         
             Token token = new Token();
@@ -118,14 +112,5 @@ public class Calculate {
     public boolean IsOperator(String s){
         return s.matches("[+-/*%]");
     }
-//    public boolean isAlpha(String name) {
-//    char[] chars = name.toCharArray();
-//
-//    for (char c : chars) {
-//        if(!Character.isLetter(c)) {
-//            return false;
-//        }
-//    }
-//    return true;
-//}
+
 }
