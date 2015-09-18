@@ -27,10 +27,12 @@ public class Token<T>{
     
     @Override
     public String toString(){
-        return( "Token consists of type" + Type + "whcih is"+ t);
+        return( "Token consists of type" + Type + "which is"+ t);
     }
     
-   public void setToken (T newToken){t = newToken;}
+   public void setToken (T newToken){
+       t = newToken;
+   }
    
     public T getToken(){
         return t;

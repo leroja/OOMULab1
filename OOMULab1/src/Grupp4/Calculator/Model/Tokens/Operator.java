@@ -13,11 +13,8 @@ import Grupp4.Calculator.Model.Istack;
  * @author Lennart
  */
 public class Operator extends Token{
-    protected Operand left, right;
     
     public Operator(){
-        left = new Operand();
-        right = new Operand();
     } 
     
 

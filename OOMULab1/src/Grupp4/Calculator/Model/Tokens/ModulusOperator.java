@@ -35,29 +35,29 @@ public class ModulusOperator extends Operator{
         if("Char".equals(tok.getType())){
             Oper = new Operator();
             Oper = (Operator)tok.getToken();
-            this.right.SetOperand(Oper.Calc(stack));
+            Right = (Oper.Calc(stack));
         }else{
             Op = new Operand();
             Op = (Operand)tok.getToken();
-            this.right.SetOperand(Op.Calc(stack));
+            Right = (Op.Calc(stack));
         }
         tok = new Token();
         tok = stack.pop();
         if("Char".equals(tok.getType())){
             Oper = new Operator();
             Oper = (Operator)tok.getToken();
-            this.left.SetOperand(Oper.Calc(stack));
+            Left = (Oper.Calc(stack));
         }else{
             Op = new Operand();
             Op = (Operand)tok.getToken();
-            this.left.SetOperand(Op.Calc(stack));
+            Left = (Op.Calc(stack));
         }
         
-        if(this.right.getOperand() == 0){
-            throw new DivideByZeroException(Double.toString(this.left.getOperand()),"%",Double.toString(this.right.getOperand()));
+        if(Right == 0){
+            throw new DivideByZeroException(Double.toString(Left),"%",Double.toString(Right));
         }
                 
-        r = this.left.getOperand() % this.right.getOperand();
+        r = Left % Right;
         return r;
     }
     
