@@ -85,8 +85,6 @@ public class Calculate {
         }catch(NumberFormatException nfe){
             System.out.println(nfe.getMessage());
             return nfe.getMessage();
-//        }catch (MoreTokensExistException mtee){
-//            return mtee.getMessage();
         }catch (DivideByZeroException dbze){
             return dbze.getMessage();
         }
