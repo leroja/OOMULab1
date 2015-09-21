@@ -12,19 +12,13 @@ import Grupp4.Calculator.Model.Istack;
  *
  * @author Lennart
  */
-public class Operator extends Token{
+public abstract class Operator extends Token{
     
-    public Operator(){
-    } 
     
 
 
     @Override
-    public double Calc(Istack stack) throws DivideByZeroException{
-        return super.Calc(stack); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-   
+    public abstract double Calc(Istack stack) throws DivideByZeroException;
     
 }
 

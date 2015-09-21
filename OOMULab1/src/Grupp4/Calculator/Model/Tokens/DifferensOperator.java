@@ -26,32 +26,13 @@ public class DifferensOperator extends Operator{
     @Override
     public double Calc(Istack stack) throws DivideByZeroException{
         double r, Right, Left;
-        Token tok = new Token();
-        Operator Oper = new Operator();
-        Operand Op = new Operand();
-        
+        Token tok;
         
         tok = stack.pop();
-        if("Char".equals(tok.getType())){
-            Oper = new Operator();
-            Oper = (Operator)tok.getToken();
-            Right = (Oper.Calc(stack));
-        }else{
-            Op = new Operand();
-            Op = (Operand)tok.getToken();
-            Right = (Op.Calc(stack));
-        }
-        tok = new Token();
+        Right = tok.Calc(stack);
+        
         tok = stack.pop();
-        if("Char".equals(tok.getType())){
-            Oper = new Operator();
-            Oper = (Operator)tok.getToken();
-            Left = (Oper.Calc(stack));
-        }else{
-            Op = new Operand();
-            Op = (Operand)tok.getToken();
-            Left = (Op.Calc(stack));
-        }
+        Left = tok.Calc(stack);
         
         r = Left - Right;
         return r;

@@ -11,35 +11,15 @@ import Grupp4.Calculator.Model.Istack;
 /**
  *
  * @author Lennart
- * @param <T>
+ * 
  */
-public class Token<T>{
-    private T t;
-    private String Type;
+public abstract class Token{
     
-    public void SetType(String newType){
-        Type = newType;
-    }
+//    @Override
+//    public String toString(){
+//        return( "Token consists of type" + Type + "which is"+ t);
+//    }
     
-    public String getType(){
-        return (Type);
-    }
-    
-    @Override
-    public String toString(){
-        return( "Token consists of type" + Type + "which is"+ t);
-    }
-    
-   public void setToken (T newToken){
-       t = newToken;
-   }
    
-    public T getToken(){
-        return t;
-    }
-    
-    public double Calc(Istack stack) throws DivideByZeroException{
-        return 0;
-
-    }
+    public abstract double Calc(Istack stack) throws DivideByZeroException;
 }

@@ -17,29 +17,27 @@ import java.util.*;
 public class Calculate {
       
     public Calculate(){
-        
     }
     
     public String calc(String Exp) throws InvalidTokenException, DivideByZeroException{
-        double res =0;
+        double res;
         Istack st = new StackStack();
         StringTokenizer StrTok = new StringTokenizer(Exp);
         String str;
+        Operator Oper;
         
         
         try{
                while(StrTok.hasMoreTokens()){
                     str = (StrTok.nextToken());
                     if (isNumeric(str)){
-                        Token token = new Token();
+                        Token token;
                         Operand Op = new Operand();
                         Op.SetOperand(Double.parseDouble(str));
-                        token.setToken(Op);
-                        token.SetType("int");
+                        token = Op;
                         st.push(token);
                     }
                     else if(IsOperator(str)){
-                        Operator Oper = new Operator();
                         switch(str){
                             case "+":
                                 Oper = new SummaOperator();
@@ -59,31 +57,21 @@ public class Calculate {
                             default:
                                 throw new InvalidTokenException(str);
                         }
-                        Token token = new Token();
-                        token.setToken(Oper);
-                        token.SetType("Char");
+                        Token token;
+                        token = Oper;
                         st.push(token);
                     }else {
                         throw new InvalidTokenException(str);
                     }
                 }
         
-            Token token = new Token();
-            Operand Op = new Operand();
-            Operator Oper = new Operator();
+            Token token;
             
             token = st.pop();
-            //token.Calc(st);
-            if("int".equals(token.getType())){
-                throw new InvalidOperationException();
-            }
-            if("Char".equals(token.getType())){
-                Oper = (Operator)token.getToken();
-                res = Oper.Calc(st);
-            }
+            res =  token.Calc(st);
 
             if(!st.isEmpty()){
-                throw new MoreTokensExistException();
+                throw new InvalidOperationException();
             }
                
         return Double.toString(res);
@@ -97,8 +85,8 @@ public class Calculate {
         }catch(NumberFormatException nfe){
             System.out.println(nfe.getMessage());
             return nfe.getMessage();
-        }catch (MoreTokensExistException mtee){
-            return mtee.getMessage();
+//        }catch (MoreTokensExistException mtee){
+//            return mtee.getMessage();
         }catch (DivideByZeroException dbze){
             return dbze.getMessage();
         }

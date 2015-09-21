@@ -16,8 +16,8 @@
 78.75
 94.5
 5.0
-DivideByZeroException4.0/0.0
-DivideByZeroException4.0%0.0
+DivideByZeroException: 4.0 / 0.0
+DivideByZeroException: 4.0 % 0.0
 InvalidOperationException
 InvalidTokenException: A
 InvalidTokenException: &
