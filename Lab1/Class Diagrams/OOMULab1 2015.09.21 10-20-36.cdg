@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="OOMULab1">
+  <ClassDiagramComponents>
+    <Class name="Calculator" package="Grupp4.Calculator" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Controller" package="Grupp4.Calculator.Controller" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public">
+          <Argument type="String" name="input"/>
+          <Argument type="String" name="Dest"/>
+        </Method>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DivideByZeroException" package="Grupp4.Calculator.Exeptions" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="exp"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="InvalidOperationException" package="Grupp4.Calculator.Exeptions" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="InvalidTokenException" package="Grupp4.Calculator.Exeptions" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="Token"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="WrongSyntax" package="Grupp4.Calculator.Exeptions" visibility="public" xPosition="1489.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Calculate" package="Grupp4.Calculator.Model" visibility="public" xPosition="1709.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calc" returnType="String" visibility="public">
+          <Argument type="String" name="Exp"/>
+        </Method>
+        <Method name="isNumeric" returnType="boolean" visibility="public">
+          <Argument type="String" name="s"/>
+        </Method>
+        <Method name="IsOperator" returnType="boolean" visibility="public">
+          <Argument type="String" name="s"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StackStack" package="Grupp4.Calculator.Model" visibility="public" xPosition="2003.0" yPosition="651.0">
+      <Fields>
+        <Field name="st" type="Stack&lt;Token&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="Token" name="token"/>
+        </Method>
+        <Method name="pop" returnType="Token" visibility="public"/>
+        <Method name="peek" returnType="Token" visibility="public"/>
+        <Method name="isEmpty" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TestStack" package="Grupp4.Calculator.Model" visibility="public" xPosition="20.0" yPosition="768.0">
+      <Fields>
+        <Field name="stack" type="Token[]" visibility="private"/>
+        <Field name="top" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="Token" name="token"/>
+        </Method>
+        <Method name="pop" returnType="Token" visibility="public"/>
+        <Method name="peek" returnType="Token" visibility="public"/>
+        <Method name="isEmpty" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DifferensOperator" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="920.0" yPosition="651.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="KvotOperator" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="1220.0" yPosition="651.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ModulusOperator" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="1489.0" yPosition="659.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Operand" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="380.0" yPosition="351.0">
+      <Fields>
+        <Field name="tal" type="double" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="SetOperand" returnType="void" visibility="public">
+          <Argument type="double" name="tal"/>
+        </Method>
+        <Method name="getOperand" returnType="double" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Operator" package="Grupp4.Calculator.Model.Tokens" visibility="public" isAbstract="true" xPosition="910.0" yPosition="351.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Calc" returnType="double" visibility="public" isAbstract="true">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProduktOperator" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="380.0" yPosition="651.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SummaOperator" package="Grupp4.Calculator.Model.Tokens" visibility="public" xPosition="655.0" yPosition="651.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="Calc" returnType="double" visibility="public">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Token" package="Grupp4.Calculator.Model.Tokens" visibility="public" isAbstract="true" xPosition="655.0" yPosition="179.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="Calc" returnType="double" visibility="public" isAbstract="true">
+          <Argument type="Istack" name="stack"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Messages" package="Grupp4.Calculator.View" visibility="public" xPosition="20.0" yPosition="202.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="EndMessage" returnType="void" visibility="public"/>
+        <Method name="InputMessage" returnType="void" visibility="public"/>
+        <Method name="FileMessage" returnType="void" visibility="public">
+          <Argument type="String" name="Source"/>
+          <Argument type="String" name="Dest"/>
+        </Method>
+        <Method name="Klar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Istack" package="Grupp4.Calculator.Model" visibility="public" xPosition="827.0" yPosition="971.0">
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="Token" name="token"/>
+        </Method>
+        <Method name="pop" returnType="Token" visibility="public"/>
+        <Method name="peek" returnType="Token" visibility="public"/>
+        <Method name="isEmpty" returnType="Boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.ModulusOperator" target="Grupp4.Calculator.Model.Tokens.Operator"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Grupp4.Calculator.Model.StackStack" target="Grupp4.Calculator.Model.Istack"/>
+    <UseRelation source="Grupp4.Calculator.Model.StackStack" target="Grupp4.Calculator.Model.Tokens.Token" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.Operator" target="Grupp4.Calculator.Model.Tokens.Token"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Grupp4.Calculator.Model.TestStack" target="Grupp4.Calculator.Model.Istack"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.SummaOperator" target="Grupp4.Calculator.Model.Tokens.Operator"/>
+    <HasRelation name="st" source="Grupp4.Calculator.Model.StackStack" target="Grupp4.Calculator.Model.Tokens.Token" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Grupp4.Calculator.Model.Tokens.Operator" target="Grupp4.Calculator.Model.Istack" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Grupp4.Calculator.Model.TestStack" target="Grupp4.Calculator.Model.Tokens.Token" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Grupp4.Calculator.Model.Tokens.Token" target="Grupp4.Calculator.Model.Istack" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.DifferensOperator" target="Grupp4.Calculator.Model.Tokens.Operator"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.Operand" target="Grupp4.Calculator.Model.Tokens.Token"/>
+    <UseRelation source="Grupp4.Calculator.Model.Tokens.Operand" target="Grupp4.Calculator.Model.Istack" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.KvotOperator" target="Grupp4.Calculator.Model.Tokens.Operator"/>
+    <UseRelation source="Grupp4.Calculator.Model.Istack" target="Grupp4.Calculator.Model.Tokens.Token" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Grupp4.Calculator.Model.Tokens.ProduktOperator" target="Grupp4.Calculator.Model.Tokens.Operator"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
