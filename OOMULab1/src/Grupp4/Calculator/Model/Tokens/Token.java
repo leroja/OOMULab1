@@ -15,11 +15,5 @@ import Grupp4.Calculator.Model.Istack;
  */
 public abstract class Token{
     
-//    @Override
-//    public String toString(){
-//        return( "Token consists of type" + Type + "which is"+ t);
-//    }
-    
-   
     public abstract double Calc(Istack stack) throws DivideByZeroException;
 }

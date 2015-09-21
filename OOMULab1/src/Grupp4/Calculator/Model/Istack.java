@@ -8,10 +8,11 @@ package Grupp4.Calculator.Model;
 import Grupp4.Calculator.Model.Tokens.Token;
 
 /**
- *
+ * interface for implementing stack
  * @author alexander
  */
 public interface Istack {  
+    
     public void push(Token token);
     public Token pop();
     public Token peek();

@@ -16,7 +16,13 @@ import Grupp4.Calculator.View.*;
  * @author Lennart
  */
 public class Controller {
-    /*Runs when program starts with 2 comandline arguments*/
+    /**
+     * Runs when program starts with 2 commandline arguments
+     * @param input input file 
+     * @param Dest destination file
+     * @throws InvalidTokenException
+     * @throws DivideByZeroException 
+     */
     public void run(String input, String Dest) throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         try {
@@ -39,7 +45,11 @@ public class Controller {
             System.out.println(e.getMessage());
 	}
     }
-    /*Runs when program starts with 0 comandline arguments*/
+    /**
+     * Runs when program starts with 0 commandline arguments
+     * @throws InvalidTokenException
+     * @throws DivideByZeroException 
+     */
     public void run() throws InvalidTokenException, DivideByZeroException{
         Messages text = new Messages();
         Calculate c = new Calculate();
