@@ -18,7 +18,13 @@ public class Calculate {
       
     public Calculate(){
     }
-    
+    /**
+     * Calculates target input string
+     * @param Exp 
+     * @return Calculated result as a string
+     * @throws InvalidTokenException
+     * @throws DivideByZeroException 
+     */
     public String calc(String Exp) throws InvalidTokenException, DivideByZeroException{
         double res;
         Istack st = new StackStack();
@@ -91,10 +97,19 @@ public class Calculate {
         
     }
  
-    
+    /**
+     * 
+     * @param s
+     * @return True if target string equals an operand
+     */
     public boolean isNumeric(String s) {  
         return s.matches("[-+]?\\d*\\.?\\d+");  
     }
+    /**
+     *
+     * @param s
+     * @return True if target string equals an operator
+     */
     public boolean IsOperator(String s){
         return s.matches("[+-/*%]");
     }

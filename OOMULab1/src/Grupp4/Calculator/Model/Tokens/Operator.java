@@ -13,9 +13,6 @@ import Grupp4.Calculator.Model.Istack;
  * @author Lennart
  */
 public abstract class Operator extends Token{
-    
-    
-
 
     @Override
     public abstract double Calc(Istack stack) throws DivideByZeroException;

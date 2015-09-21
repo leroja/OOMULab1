@@ -15,6 +15,5 @@ import Grupp4.Calculator.Model.Istack;
  */
 public abstract class Token{
     
-    
     public abstract double Calc(Istack stack) throws DivideByZeroException;
 }
