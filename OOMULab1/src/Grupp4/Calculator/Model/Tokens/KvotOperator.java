@@ -22,7 +22,14 @@ public class KvotOperator extends Operator{
         return ("/");
     }
     
-
+     
+     
+/**
+ *
+ * @param stack
+ * @return
+ * @throws DivideByZeroException 
+ */
     @Override
     public double Calc(Istack stack) throws DivideByZeroException{
         double r, Right, Left;
