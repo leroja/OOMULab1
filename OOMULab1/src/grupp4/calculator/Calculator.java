@@ -17,12 +17,9 @@ public class Calculator {
     public static void main(String[] args) throws InvalidTokenException, DivideByZeroException {
         
         try{
-            if(args.length == 0){
+            if(args.length == 0 || args.length == 2){
                 Controller controll = new Controller();
-                controll.run();
-            }else if(args.length == 2){
-                Controller controll = new Controller();
-                controll.run(args[0], args[1]);
+                controll.run(args);
             }else{
                 throw new WrongSyntax();
             }
