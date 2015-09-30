@@ -1,0 +1,73 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package grupp4.calculator.controller;
+
+import grupp4.calculator.exeptions.*;
+import grupp4.calculator.model.Calculate;
+import grupp4.calculator.view.*;
+import java.util.*;
+import java.io.*;
+/**
+ *
+ * @author Lennart
+ */
+public class Controller {
+    /**
+     * Runs when program starts with 2 commandline arguments
+     * @param input input file 
+     * @param Dest destination file
+     * @throws InvalidTokenException
+     * @throws DivideByZeroException 
+     */
+    public void run(String input, String Dest) throws InvalidTokenException, DivideByZeroException{
+        Messages text = new Messages();
+        try {
+            BufferedReader fil= new BufferedReader(new FileReader(input));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Dest));
+            Calculate c = new Calculate();
+            String line, result;
+            
+            text.FileMessage(input, Dest);
+            while((line = fil.readLine()) != null){
+             
+            result = c.calc(line);
+            
+            writer.write(result);
+            writer.newLine();
+            }
+            writer.close();
+            text.Klar();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+	}
+    }
+    /**
+     * Runs when program starts with 0 commandline arguments
+     * @throws InvalidTokenException
+     * @throws DivideByZeroException 
+     */
+    public void run() throws InvalidTokenException, DivideByZeroException{
+        Messages text = new Messages();
+        Calculate c = new Calculate();
+        String result;
+        
+        while(true){
+        text.InputMessage();
+        Scanner scan = new Scanner(System.in); 
+        String str =scan.nextLine();
+        if (str.isEmpty() == true){
+            text.EndMessage();
+            System.exit(0);
+        }
+        else{
+            result = c.calc(str);
+            System.out.println("Resultat: "+ result);
+        }   
+        }
+    }
+}
+     
+
