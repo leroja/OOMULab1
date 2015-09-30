@@ -11,7 +11,7 @@ import Grupp4.Calculator.Model.Istack;
  * @author Lennart
  */
 public class Operand extends Token{
-    double tal;
+    private double tal;
     
     @Override
     public String toString(){
